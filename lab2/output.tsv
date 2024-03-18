@@ -1,0 +1,1077 @@
+Title	Text	Added by	Date	Time limit	Source limit	Memory limit	Cluster	Languages	Resource	URL
+NQUEEN - Yet Another N-Queen Problem	"After solving Solution to the n  Queens Puzzle by constructing, LoadingTime wants to solve a harder version of the N-Queen Problem. Some queens have been set on particular locations on the board in this problem. Can you help him??
+Input
+The input contains multiple test cases. Every line begins with an integer N (N<=50), then N integers followed, representing the column number of the queen in each rows. If the number is 0, it means no queen has been set on this row. You can assume there is at least one solution. 
+Output
+For each test case, print a line consists of N numbers separated by spaces, representing the column number of the queen in each row. If there are more than one answer, print any one of them. 
+Example
+
+Input:
+4 0 0 0 0
+8 2 0 0 0 4 0 0 0
+
+Output:
+2 4 1 3
+2 6 1 7 4 8 3 5"	Bin Jin	2007-09-06	1s	10000B	1536MB	Cube (Intel G860)	All except: CPP	own problem	https://www.spoj.com//problems/NQUEEN
+DETER2 - Find The Determinant II	"In this problem you have to calculate the determinant of an N x N matrix whose entries are given by m[i][j] = gcd(i,j)k, 1 ≤ i,j ≤ N.
+Here gcd(i,j) denotes the greatest common divisor of i and j.
+As the determinant D can grow very large, you have to print D%1000003.
+
+Input
+First line of input consists of a single integer containing the number of test cases T ( equal to around 20), each of the following T lines contain two integers N and k where N is the size of the matrix and k is the exponent.
+1 ≤ N ≤ 1000000
+1 ≤ k ≤ 109
+Output
+One line corresponding to each test case containing the determinant modulo 1000003 for the corresponding test case.
+
+Example
+
+Input:
+3
+4 2
+2 4
+4 3
+
+
+Output:
+288
+15
+10192
+
+Note: You may want to solve DETER first, in case you havent already solved it."	Ajay Somani	2007-09-07	1s	2048B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	"""The Art of Computer Programming"""	https://www.spoj.com//problems/DETER2
+ALL - All Discs Considered	"Operating systems are large software artefacts composed of many packages, usually distributed on several media, e.g., discs.
+You probably remember the time when your favourite operating system was delivered on 21 floppy discs, or, a few years later, on 6 CDs.
+Nowadays, it will be shipped on several DVDs, each containing tens of thousands of packages.
+
+
+
+The installation of certain packages may require that other packages have been installed previously.
+Therefore, if the packages are distributed on the media in an unsuitable way, the installation of the complete system requires you to perform many media changes, provided that there is only one reading device available, e.g., one DVD-ROM drive.
+Since you have to start the installation somehow, there will of course be one or more packages that can be installed independently of all other packages.
+
+
+
+Given a distribution of packages on media and a list of dependences between packages, you have to calculate the minimal number of media changes required to install all packages.
+For your convenience, you may assume that the operating system comes on exactly 2 DVDs.
+
+Input
+
+The input contains several test cases.
+Every test case starts with three integers N1, N2, D.
+You may assume that 1<=N1,N2<=50000 and 0<=D<=100000.
+The first DVD contains N1 packages, identified by the numbers 1, 2, ..., N1.
+The second DVD contains N2 packages, identified by the numbers N1+1, N1+2, ..., N1+N2.
+Then follow D dependence specifications, each consisting of two integers xi, yi.
+You may assume that 1<=xi,yi<=N1+N2 for 1<=i<=D.
+The dependence specification means that the installation of package xi requires the previous installation of package yi.
+You may assume that there are no circular dependences.
+The last test case is followed by three zeros.
+
+
+Output
+
+For each test case output on a line the minimal number of DVD changes required to install all packages.
+By convention, the DVD drive is empty before the installation and the initial insertion of a disc counts as one change.
+Likewise, the final removal of a disc counts as one change, leaving the DVD drive empty after the installation.
+
+Example
+
+Input:
+3 2 1
+1 2
+2 2 2
+1 3
+4 2
+2 1 1
+1 3
+0 0 0
+
+Output:
+3
+4
+3"	Wanderley GuimarÄes	2007-09-14	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2004	https://www.spoj.com//problems/ALL
+BOOLE - Boolean Logic	"Propositions are logical formulas consisting of proposition symbols and connecting operators.
+They are recursively defined by the following rules:
+
+
+All proposition symbols (in this problem, lower-case alphabetic characters, e.g., a and z) are propositions.
+
+If P is a proposition, (!P) is a proposition, and P is a direct subformula of it.
+If P and Q are propositions, (P&Q), (P|Q), (P-->Q), and (P<->Q) are propositions, and P and Q are direct subformulas of them.
+
+Nothing else is a proposition.
+
+
+The operations !, &, |, -->, and <-> denote logical negation, conjunction, disjunction, implication, and equivalence, respectively.
+A proposition P is a subformula of a proposition R if P=R or P is a direct subformula of a proposition Q and Q is a subformula of R.
+
+
+
+
+Let P be a proposition and assign boolean values (i.e., 0 or 1) to all proposition symbols that occur in P.
+This induces a boolean value to all subformulas of P according to the standard semantics of the logical operators:
+
+
+
+
+
+negation
+conjunction
+disjunction
+implication
+equivalence
+
+!0=1
+0&0=0
+0|0=0
+0-->0=1
+0<->0=1
+
+!1=0
+0&1=0
+0|1=1
+0-->1=1
+0<->1=0
+
+
+1&0=0
+1|0=1
+1-->0=0
+1<->0=0
+
+
+1&1=1
+1|1=1
+1-->1=1
+1<->1=1
+
+
+
+
+This way, a value for P can be calculated.
+This value depends on the choice of the assignment of boolean values to the proposition symbols.
+If P contains n different proposition symbols, there are 2n different assignments.
+To evaluate all possible assignments we may use truth tables.
+
+
+
+
+A truth table contains one line per assignment (i.e., 2n lines in total).
+Every line contains the values of all subformulas under the chosen assignment.
+The value of a subformula is aligned with the proposition symbol, if the subformula is a proposition symbol, and with the center of the operator otherwise.
+
+Input Specification
+
+
+The input contains several test cases, each on a separate line.
+Every test case denotes a proposition and may contain arbitrary amounts of spaces in between.
+The input file terminates immediately after the newline symbol following the last test case.
+
+Output Specification
+
+
+For each test case generate a truth table for the denoted proposition.
+Start the truth table by repeating the input line.
+Evaluate the proposition (and its subformulas) for all assignments to its variables, and output one line for each assignment.
+The line must have the same length as the corresponding input line and must consist only of spaces and the characters 0 and 1.
+Output an empty line after each test case.
+
+
+
+
+Let s1,...,sn be the proposition symbols in the denoted proposition sorted in alphabetic order.
+Then, all assignments of 0 to s1 must precede the assignments of 1 to s1.
+Within each of these blocks of assignments, all assignments of 0 to s2 must precede the assignments of 1 to s2, and so on.
+
+
+Sample Input
+
+
+((b --> a) <-> ((! a) --> (! b)))
+  ((y &  a)   -  ->(c |c))
+
+Sample Output
+
+
+((b --> a) <-> ((! a) --> (! b)))
+  0  1  0   1    1 0   1   1 0   
+  1  0  0   1    1 0   0   0 1   
+  0  1  1   1    0 1   1   1 0   
+  1  1  1   1    0 1   1   0 1   
+
+  ((y &  a)   -  ->(c |c))
+    0 0  0       1  0 00  
+    1 0  0       1  0 00  
+    0 0  0       1  1 11  
+    1 0  0       1  1 11  
+    0 0  1       1  0 00  
+    1 1  1       0  0 00  
+    0 0  1       1  1 11  
+    1 1  1       1  1 11"	Wanderley GuimarÄes	2007-09-14	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2004	https://www.spoj.com//problems/BOOLE
+DNALAB - DNA Laboratory	"Having started to build his own DNA lab just recently, the evil doctor Frankenstein is not quite
+  up to date yet. He wants to extract his DNA, enhance it somewhat and clone himself. He has
+  already figured out how to extract DNA from some of his blood cells, but unfortunately reading
+  off the DNA sequence means breaking the DNA into a number of short pieces and analyzing those
+  first. Frankenstein has not quite understood how to put the pieces together to recover the original sequence."	AndrÃ©s Leonardo Rojas Duarte	2007-09-15	2.052s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	TUD Programming Contest 2004	https://www.spoj.com//problems/DNALAB
+ICAMPSEQ - IOICamp Sequence	"Let's say we have 4 N-elements sequences of real numbers: A[], B[], C[], D[] .
+Funtion F(i, j) is defined: F(i, j) = |Ai - Aj| + |Bi - Bj| + |Ci - Cj| + |Di - Dj| (1 â¤ i, j â¤ N).
+Your task is very easy: you have to find the maximum of F(i, j).
+
+Input
+The first line: N (N â¤ 100000).
+Following are N lines: the i-th line contains four real numbers Ai, Bi, Ci, Di. (-109 â¤ Ai, Bi, Ci, Di â¤ 109)
+
+Output
+Only one line is the maximum of F(i, j).
+(The result takes exactly 3 decimal places)
+Example
+
+Input:
+2
+1.0 1.0 2.0 0.5
+1.0 1.0 0.5 2.0
+
+Output:
+3.000"	Nghia Nguyen Hoang	2007-09-18	0.100s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	IOICamp and Ms. Thanh Vy Hua Le	https://www.spoj.com//problems/ICAMPSEQ
+CODE - Code	KEY Inc., the leading company in security hardware, has developed a new kind of safe. To unlock it, you don't need a key but you are required to enter the correct n-digit code on a keypad (as if this were something new!). There are several models available, from toy safes for children (with a 2-digit code) to the military version (with a 6-digit code).	Wanderley GuimarÄes	2007-09-19	0.200s	50000B	1536MB	Cube (Intel G860)	All	University of Ulm Local Contest 2004	https://www.spoj.com//problems/CODE
+DANGER - In Danger	"Flavius Josephus and 40 fellow rebels were trapped by the Romans.
+His companions preferred suicide to surrender, so they decided to form a circle and to kill every third person and to proceed around the circle until no one was left.
+Josephus was not excited by the idea of killing himself, so he calculated the position to be the last man standing (and then he did not commit suicide since nobody could watch)."	Wanderley GuimarÄes	2007-09-19	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2004	https://www.spoj.com//problems/DANGER
+ENCONDIN - Run Length Encoding	Your task is to write a program that performs a simple form of run-length encoding, as described by the rules below.	Wanderley GuimarÄes	2007-09-19	0.303s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2004	https://www.spoj.com//problems/ENCONDIN
+FRACTAN - Fractan	Formally, we define a sequence by S0=N, and Sj+1=fiSj, if for 1<=i<=k, the number fiSj is an integer but the numbers f1Sj, ..., fi-1Sj are not.	Wanderley GuimarÄes	2007-09-19	0.303s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2004	https://www.spoj.com//problems/FRACTAN
+GREEDULM - HuffmanÂ´s Greed	"In the following we define the basic terminology of trees.
+A tree is defined inductively: It has a root which is either an external node (a leaf), or an internal node having a sequence of trees as its children.
+An internal node is also called the parent of the roots of its child trees.
+The level of a node in a tree is defined inductively: The root has level 0, and the level of a node is 1 more than the level of its parent node."	Wanderley GuimarÄes	2007-09-19	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2004	https://www.spoj.com//problems/GREEDULM
+HEAPULM - Binary Search Heap Construction	"Read the statement of problem G for the definitions concerning trees.
+In the following we define the basic terminology of heaps.
+A heap is a tree whose internal nodes have each assigned a priority (a number) such that the priority of each internal node is less than the priority of its parent.
+As a consequence, the root has the greatest priority in the tree, which is one of the reasons why heaps can be used for the implementation of priority queues and for sorting."	Wanderley GuimarÄes	2007-09-19	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2004	https://www.spoj.com//problems/HEAPULM
+GEN2 - Text Generater II	HL, HJ and FGD set problem for ZMY everyday. The title of each problem bores them very much. The title is a string which consists only lower case letters. Its length is L, and, of course, the title must contain their names (hl, hj, fgd) as consecutive substrings. More apparently, N evil consecutive substrings should not appear in the title. Any string satisfying the two conditions above is OK.	Fudan University Problem Setters	2007-09-20	2s	50000B	1536MB	Cube (Intel G860)	All except: C99 ERL GOSU JS-RHINO	description by Blue Mary; standard program and test data by g201513	https://www.spoj.com//problems/GEN2
+DRAGON2 - Greedy Hydra II	The problem description is the same as the problem DRAGON.	Fudan University Problem Setters	2007-09-20	0.100s	50000B	1536MB	Cube (Intel G860)	All except: C99 ERL GOSU JS-RHINO	description by Blue Mary; standard program and test data by lcosvse	https://www.spoj.com//problems/DRAGON2
+CARD - Cardsharper	Zenek is a well known (at least in Byteotia) card-sharper. He spent most of his best years practicing one card shuffle with his deck of n cards, which for simplicity we will call 1, 2, ..., n. Unfortunately, it turns out that knowing this one card shuffle a is not enough to earn a good living. To become rich and famous Zenek needs to know k shuffles c1, ..., ck. As he doesn't have  enough time to learn all of them, he decided to learn only one shuffle b so that using both a and b he will be able to perform as many of ci as it is possible.	gawry	2007-09-20	0.200s	50000B	1536MB	Cube (Intel G860)	All	Fajne Zawody Informatyczne	https://www.spoj.com//problems/CARD
+ASSIST - Assistance Required	"After the 1997/1998 Southwestern European Regional Contest (which was held in Ulm) a large contest party took place.
+The organization team invented a special mode of choosing those participants that were to assist with washing the dirty dishes.
+The contestants would line up in a queue, one behind the other.
+Each contestant got a number starting with 2 for the first one, 3 for the second one, 4 for the third one, and so on, consecutively."	Wanderley GuimarÄes	2007-09-21	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2003	https://www.spoj.com//problems/ASSIST
+BOTTOM - The Bottom of a Graph	"We will use the following (standard) definitions from graph theory.
+Let $V$ be a nonempty and finite set, its elements being called vertices (or nodes).
+Let $E$ be a subset of the Cartesian product $V \times V$, its elements being called edges.
+Then $G = (V, E)$ is called a directed graph."	Wanderley GuimarÄes	2007-09-21	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2003	https://www.spoj.com//problems/BOTTOM
+CONTEST - Fixed Partition Contest Management	A technique used in early programming contest strategies involved partitioning the available intellectual capacity of a team into a number of members with each member having a fixed amount of intelligence, different members potentially having different amounts. The sum of the brightness of all members equals the total intellectual capacity of the team.	Wanderley GuimarÄes	2007-09-21	0.200s	50000B	1536MB	Cube (Intel G860)	All	University of Ulm Local Contest 2003	https://www.spoj.com//problems/CONTEST
+DRINK - Drink, on Ice	"A good drink is always served on ice.
+That said, the amount of ice is what makes the difference.
+If it is too much, the drink will be well cooled, however, this is a bit of fraud as there could be less ice (and more Vodka for example).
+On the other hand, if there is too little ice the drink is warm which is unacceptable.
+You are to help the bartender, of course neither with mixing nor drinking, but with calculating the expected outcome of such mixtures."									https://www.spoj.com//problems/DRINK
+EDGE - Edge	"For products that are wrapped in small packings it is necessary that the sheet of paper containing the directions for use is folded until its size becomes small enough.
+We assume that a sheet of paper is rectangular and only folded along lines parallel to its initially shorter edge.
+The act of folding along such a line, however, can be performed in two directions: either the surface on the top of the sheet is brought together, or the surface on its bottom.
+In both cases the two parts of the rectangle that are separated by the folding line are laid together neatly and we ignore any differences in thickness of the resulting folded sheet."									https://www.spoj.com//problems/EDGE
+FOLD - Fold	"Read the statement of problem E: Edge to understand how to fold a sheet of paper and how to interpret the input.
+We define a ""stripe"" to be a maximally large part of the sheet that has no folding line going through.
+Since the turns occur at equidistant places, all stripes are congruent."	Wanderley GuimarÄes	2007-09-21	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2003	https://www.spoj.com//problems/FOLD
+GENETIC - Genetic Code	"The connections between mathematics and biology are complicated.
+Most of the time they do not run along nice-looking links that merrily join at first glance, but they are abstract and not always easily established."	Wanderley GuimarÄes	2007-09-21	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2003	https://www.spoj.com//problems/GENETIC
+HISTOGRA - Largest Rectangle in a Histogram	"A histogram is a polygon composed of a sequence of rectangles aligned at a common base line.
+The rectangles have equal widths but may have different heights.
+For example, the figure on the left shows the histogram that consists of rectangles with the heights 2, 1, 4, 5, 1, 3, 3, measured in units where 1 is the width of the rectangles:"	Wanderley GuimarÄes	2007-09-21	0.800s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2003	https://www.spoj.com//problems/HISTOGRA
+ORZ - Nuclear Plants	The Great Plain of Algorithmia plays an extremely important role in the agriculture of the Bandulu Kingdom: this is the only place where barley (Hordeum vulgare), an essential ingredient of beer, can be produced. Unfortunately, it is not possible to grow barley on the full area of the plain, as several nuclear plants have recently been built, and you cannot grow barley near a nuclear plant (since you do not want to produce giant-size, aggressive, man-eating barley-mutants). Your task is to write a program that determines the size of the area that can be used for growing barley.	Fudan University Problem Setters	2007-09-23	1s	50000B	1536MB	Cube (Intel G860)	All except: C99 ERL GOSU JS-RHINO	ACM Central European Programming Contest, Budapest 2005	https://www.spoj.com//problems/ORZ
+LCS - Longest Common Substring	A string is finite sequence of   characters over a non-empty finite set Î£.	Bin Jin	2007-09-24	1s	50000B	1536MB	Cube (Intel G860)	All except: ASM64 CPP		https://www.spoj.com//problems/LCS
+LCS2 - Longest Common Substring II	A string is finite sequence of          characters over a non-empty finite set Σ.	Bin Jin	2007-09-24	1s	50000B	1536MB	Cube (Intel G860)	All except: ASM64 CPP		https://www.spoj.com//problems/LCS2
+WA - Problems Collection (Volume X)	These ten problems come from Chinese National Olympiad in Mathematics - Province Contest.	Fudan University Problem Setters	2007-09-27	0.100s	60B	1536MB	Cube (Intel G860)	TEXT	CMOP :)	https://www.spoj.com//problems/WA
+FTOUR2 - Free tour II	After the success of 2nd anniversary (take a look at problem FTOUR for more details), this 3rd year, Travel Agent SPOJ goes on with another discount tour.	Thanh-Vy Hua	2007-09-28	0.100s-1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	Adapted from Preslav Le's problem, first used in Bulgarian OI 07	https://www.spoj.com//problems/FTOUR2
+SUDOKU2 - Sudoku	"Oh no! Bill just realized that the sudoku puzzle he had spent the last
+ten minutes trying to solve essentially was last week's puzzle, only
+rotated counterclockwise. How cheap! Couldn't the magazine afford to
+make a new one every week? Of course, he had no way of knowing about
+this before he started to solve it, as the holes to fill with digits
+were other than last week.  Nevertheless, realizing that this week's
+puzzle was a simple derivative of last week's certainly took the fun
+out of solving the rest of it."	overwise	2007-10-02	2.179s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	ACM ICPC NWERC 2006	https://www.spoj.com//problems/SUDOKU2
+SETSTACK - The SetStack Computer		overwise	2007-10-02	2.407s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	ACM ICPC NWERC 2006	https://www.spoj.com//problems/SETSTACK
+PIE - Pie		overwise	2007-10-02	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	ACM ICPC NWERC 2006	https://www.spoj.com//problems/PIE
+TICKET - Ticket to Ride		overwise	2007-10-02	4.982s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	ACM ICPC NWERC 2006	https://www.spoj.com//problems/TICKET
+BOOKCASE - The Bookcase		overwise	2007-10-02	3.819s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	ACM ICPC NWERC 2006	https://www.spoj.com//problems/BOOKCASE
+PQUEUE - Printer Queue		overwise	2007-10-02	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	ACM ICPC NWERC 2006	https://www.spoj.com//problems/PQUEUE
+PPATH - Prime Path		overwise	2007-10-02	2s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	ACM ICPC NWERC 2006	https://www.spoj.com//problems/PPATH
+LINELAND - Lineland Airport	"Lineland is a strange country. As the name suggests, it's shape (as
+seen from above) is just a straight line, rather than some
+two-dimensional shape.  The landscape along this line is very
+mountainous, something which occasionally leads to some problems. One
+such problem now occurs: in this modern era the king wants to build an
+airport to stimulate the country's economy. Unfortunately, it's
+impossible for airplanes to land on steep airstrips, so a horizontal
+piece of land is needed. To accommodate for the larger airplanes, this
+strip needs to have length at least L."	overwise	2007-10-02	3.450s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	ACM ICPC NWERC 2006	https://www.spoj.com//problems/LINELAND
+LEONARDO - Leonardo Notebook		overwise	2007-10-02	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	ACM ICPC NWERC 2006	https://www.spoj.com//problems/LEONARDO
+MICEMAZE - Mice and Maze	"A set of laboratory mice is being trained to escape a maze. The maze is made up of cells, and each cell is connected to some other cells. However, there are obstacles in the passage between cells and therefore there is a time penalty to overcome the passage Also, some passages allow mice to go one-way, but not the other way round.
+
+
+Suppose that all mice are now trained and,  when placed  in  an  arbitrary cell in the maze, take a path that leads them to  the  exit cell in minimum time.
+
+
+We are going to conduct the following experiment: a mouse is placed in each cell  of the maze and a count-down timer is started. When the timer stops we count the number of mice out of the maze.
+
+Problem
+
+Write a program that, given a description of the maze and the time limit, predicts the number of mice that will exit the maze. Assume that there are no bottlenecks is the maze, i.e. that all cells have room for an arbitrary number of mice.
+
+Input
+
+The maze cells are numbered $1, 2, \ldots, N$, where $N$ is the total number of cells. You can assume that $N \le 100$.
+
+
+The first three input lines contain  $N$, the number of cells in the maze, $E$, the number of the exit cell, and the starting value $T$  for the count-down timer (in some arbitrary time unit).
+
+
+The fourth line contains the number $M$ of connections in the maze, and is followed by $M$ lines, each specifying a connection with three integer numbers: two cell numbers $a$ and $b$ (in the range $1, \ldots, N$) and the number of time units it takes to travel from $a$ to $b$.
+
+
+Notice that each connection is one-way, i.e., the mice can't travel from $b$ to $a$ unless there is another line specifying that passage.
+Notice also that the time required to travel in each direction might be different.
+
+Output
+
+The output consists of a single line with 
+the number of mice that reached the exit cell $E$ in at most $T$ time units.
+
+Example
+
+Input:
+4 
+2 
+1
+8
+1 2 1
+1 3 1
+2 1 1
+2 4 1
+3 1 1
+3 4 1
+4 2 1
+4 3 1
+
+Output:
+3"	overwise	2007-10-04	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	ACM ICPC -- SWERC 2001	https://www.spoj.com//problems/MICEMAZE
+PFDEP - Project File Dependencies	Project managers, such as the UNIX utility make, are used to maintain large software projects made up from many components. Users write a project file specifying which components (called tasks) depend on others and the project manager can automatically update the components in the correct order.	overwise	2007-10-04	0.405s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	ACM ICPC -- SWERC 2001	https://www.spoj.com//problems/PFDEP
+NOCHANGE - No Change	Though it might be hard to imagine, the inhabitants of a small country Additivia do not know of such thing as change, which probably has to do with them not knowing subtraction either. When they buy something, they always need to have the exact amount of addollars, their currency. The only other option, but not a really attractive one, is over-paying.	overwise	2007-10-04	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	ACM ICPC -- SWERC 2001	https://www.spoj.com//problems/NOCHANGE
+MKWAVES - Making Waves	"Suppose we know a signal is generated by the function x sin (f1t) + sin (f2t). F1 and f2 are two unique
+frequencies, each having an integral value in the range 400 to 600 Hz (Hz = cycles per second), and t
+represents time. In this problem, you will be given N samples of this function at equally-spaced time
+intervals corresponding to t = 1/N, t = 2/N, and so forth. From these samples, you are to determine f1 and
+f2.
+
+
+For example, suppose f1 = 400 Hz, f2 = 500 Hz, and N = 100. The first sample, at time t = 1/100 sec, is
+equal to sin(400 0.01) sin(500 0.01) sin(4) sin(5) 0.156912 . Similarly, the second sample, at
+time t = 2/100 sec, is equal to sin(400 0.02) sin(500 0.02) sin(8) sin(10) 0.312821.
+
+Input
+There will be multiple cases to consider. Each case begins with an integer N, no larger than 1000, that
+specifies the number of signal samples. The next N data items are real numbers representing the signal
+samples at time 1/N sec, 2/N sec, and so forth. A single integer 0 follows the last case.
+The number of samples for each case is guaranteed to be sufficient to allow the correct result to be
+obtained.
+
+Output
+For each input case, display a single line that is formatted like this:
+Case 1, f1 = 400, f2 = 500
+
+Example
+
+Input:
+100
+0.156912 0.312821 0.466731 0.617657 0.764638 0.906737 1.04305 1.17271
+1.29489 1.40883 1.51381 1.60917 1.69432 1.76873 1.83195 1.8836 1.92338
+1.95106 1.96649 1.96962 1.96045 1.93908 1.9057 1.86055 1.80396 1.73634
+1.65816 1.56997 1.47237 1.36603 1.25166 1.13003 1.00196 0.868307 0.729943
+0.587785 0.442764 0.295823 0.147918 1.68756e-010 -0.146981 -0.292088
+-0.434403 -0.573031 -0.707107 -0.835801 -0.958325 -1.07394 -1.18195
+-1.28171 -1.37266 -1.45428 -1.52611 -1.58779 -1.63898 -1.67947 -1.70907
+-1.7277 -1.73535 -1.73205 -1.71795 -1.69323 -1.65816 -1.61308 -1.55838
+-1.49452 -1.42201 -1.34141 -1.25334 -1.15846 -1.05745 -0.951057 -0.840028
+-0.725146 -0.607206 -0.487017 -0.365392 -0.243145 -0.121082 -2.75143e-010
+0.119322 0.236125 0.34968 0.459289 0.564288 0.664055 0.758014 0.845635
+0.926438 1 1.06595 1.12398 1.17384 1.21533 1.24833 1.27276 1.28862
+1.29596 1.29489 1.28558
+
+0
+
+Output:
+Case 1, f1 = 400, f2 = 500"	Camilo AndrÃ©s Varela LeÃ³n	2007-10-07	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	North Central North America Regional Programming Contest - 2003	https://www.spoj.com//problems/MKWAVES
+MKPALS - Making Pals	"A palindrome is a sequence that is the same when read forward or backward. For example, “pop” is a
+palindrome, as are “Poor Dan is in a droop” (ignoring spaces and case), and “12321”.
+
+
+In this problem, you are to find the “cheapest” way to transform a sequence of decimal digits into a
+palindrome. There are only two types of modifications you may make to the sequence, but each of these
+may be repeated as many times as necessary. You may delete a digit from either end of the sequence, or
+you may add a digit to either end of the sequence. Each of these operations incurs a “cost” of 1. For each
+input sequence, determine the smallest cost of transforming the sequence into a palindrome, and the length
+of the resulting palindrome. If two palindromes can be produced with the same cost, the length of the
+longer palindrome (the one with more digits) is to be reported.
+
+
+For example, suppose the initial sequence was “911”. This can be transformed into a palindrome by deleting
+the leading “9” (yielding “11”) or by adding an additional “9” to the right end of the sequence (yielding
+“9119”). Since both of these transformations have a cost of 1, and the second transformation yields a
+longer palindrome, it is this one which would be reported as your result.
+
+
+Note that the particular palindrome produced by the cheapest sequence of transformations is not
+necessarily unique, but since you are not required to report the resulting palindrome, any of these will
+suffice.
+
+Input
+There will be multiple cases to consider. Each case has a single line of input that contains one or more
+decimal digits followed by the end of line. The maximum number of digits in a sequence will be 6. The last
+case is followed by an empty line (that is, only an end of line).
+
+Output
+For each input case, display the case number (1, 2, …), the input sequence, the cost of the cheapest
+transformation, and the length of the resulting palindrome. Your output should follow the format shown in
+the examples below.
+
+Example
+
+Input:
+911
+9118
+11234
+<-- This line is blank
+
+Output:
+Case 1, sequence = 911, cost = 1, length = 4
+Case 2, sequence = 9118, cost = 2, length = 4
+Case 3, sequence = 11234, cost = 3, length = 8"	Camilo AndrÃ©s Varela LeÃ³n	2007-10-07	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	North Central North America Regional Programming Contest - 2003	https://www.spoj.com//problems/MKPALS
+MKMONEY - Making Money	"A trick sometimes used by parents to teach their children the value of money is to give then a penny – just
+a penny! – and the promise that for each day they don’t spend it, the parent will double it. All students of
+computing know that long before a month has elapsed without spending a cent, the parents will not likely be
+able to make good on their promise.
+
+
+100-percent compound daily interest on an investment is, of course, unattainable in normal financial
+dealings, but we are all continually reminded of the power of compound interest, even with the relatively
+low interest rates available today.
+
+
+But exactly how much money can be made with compound interest? Assume, for example, an initial
+investment of $100.00 (US or Canadian ☺), an annual interest rate of 6.00 percent, and that interest is
+compounded monthly. That is, the interest earned during the preceding month is added to the principal at
+the end of the month. (For our purposes, we’ll assume a month is exactly 1/12th of a year.)
+
+
+At the end of the first month, the money will have earned 0.5 percent interest (1/12th of 6.00 percent), or
+$0.50. This is added to the $100.00 invested, so that during the next month, interest is paid on $100.50.
+During the next month another 0.5 percent interest is earned, which is exactly $0.5025. We will assume
+that the bank, being conservative, will not pay any interest less than $0.01, so our investment is credited
+with an additional $0.50 at the end of the second month, for a whopping total of $101.00. Continuing in the
+same manner, at the end of 12 months our investment will total $106.12, $0.12 more than simple 6.00
+percent interest for a year with no compounding.
+
+
+Given an amount P to be invested for a year with I percent interest, compounded C times during the year at
+equal intervals, what is total return on the investment?
+
+Input
+There will be multiple cases to consider. The input for each case is a single line containing the initial
+investment amount, P, given in dollars and cents (but no fractional cents, and no larger than $100,000.00),
+the annual interest rate (I) given as a real number with two fractional digits representing a percentage,
+greater than zero but less than 100, and the number of compounding intervals per year (C), an integer
+between 1 and 365. The last case will be followed by a line containing “0.00 0.00 0”.
+
+Output
+For each input case, display the case number (1, 2, …), the initial investment (P), the annual interest rate
+(I), the number of compounding intervals per year(C), and the value of the investment at the end of a year.
+Your output should follow the format shown in the examples below.
+
+Example
+
+Input:
+100.00 6.00 1
+100.00 6.00 12
+1000.00 6.00 12
+0.00 0.00 0
+
+Output:
+Case 1. $100.00 at 6.00% APR compounded 1 times yields $106.00
+Case 2. $100.00 at 6.00% APR compounded 12 times yields $106.12
+Case 3. $1000.00 at 6.00% APR compounded 12 times yields $1061.63"	Camilo AndrÃ©s Varela LeÃ³n	2007-10-07	0.100s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	North Central North America Regional Programming Contest - 2003	https://www.spoj.com//problems/MKMONEY
+MKMOOM - Making Mountains Out Of Molehills	"A macro processor is a symbol processing program. It takes a stream of characters as its input, and
+produces a stream of characters as its output. A “macro” is similar to ordinary function in that it has a
+definition, and when invoked, that definition is applied to the argument(s) to yield the result. In this
+problem, you will develop a simple macro processor.
+
+
+A “macro call” consists of a name and a list of arguments, separated by commas. The name is preceded by
+'[' (a left bracket) and the last argument is followed by ']' (a right bracket). For example, “[doit,to,it]”
+calls the macro named “doit” with two arguments, “to” and “it”. “[random]” calls the macro named “random”
+with no arguments.
+
+
+Before a macro can be called, it must be defined by associating its name with a symbol string. This
+definition string may contain the special constructions “$1” through “$9” to reference the first through
+the ninth macro parameters. “$0” references the macro’s name itself. When the macro is called, these
+constructions are literally replaced by the values of the parameters. For example, suppose the definition
+string for the macro named “321” was “$3-$2-$1”. The macro call “[321,This,is,fun]” would yield the output
+“fun-is-This”. A macro call can appear anywhere. For example, the macro call “[321,[321,A,B,C],D,E]” would
+yield the output “E-D-C-B-A”.
+
+
+Input enclosed in '<' and '>' prevents the evaluation of the text enclosed, allowing special characters like
+'[', ']', ',' and '$' to be used in other than their usual contexts. Thus the macro call “[321,<$>,<[>,<,>]” would
+yield “,-[-$”.
+
+
+Macros are defined using the predefined macro named “def”, which has two arguments. The first argument
+is the name of the macro being defined, and the second argument is the defining symbol string for the
+macro. The “321” macro definition is “[def,321,<$3-$2-$1>]”. Note that the definition is enclosed in '<' and
+'>' to prevent “$1”, “$2”, and “$3” from being interpreted as parameter references to def. The def macro
+produces no output. Naturally, the def macro isn’t defined using def, but is treated specially by the
+implementation.
+
+
+Processing
+The input stream is processed character by character and copied to the output until a macro call is
+encountered, or the input is exhausted (which terminates processing). A macro call is evaluated as
+described below, with the result (if any) copied to the output.
+
+
+
+The macro name and the parameters are evaluated in sequence from left to right. This may require
+evaluating additional macro calls, which must be processed recursively.
+When the argument list is complete (that is, when the closing ']' is encountered) the definition of
+the macro being called is scanned in the same manner as the original input stream except that
+occurrences of “$0”, “$1”, and so forth are replaced literally by the corresponding arguments. The
+result of the macro call is the symbol stream produced by this scan.
+When the macro call is completed, the macro name and the arguments are discarded, and processing
+resumes at the point where it was interrupted by the macro call.
+
+
+Limits and Caveats
+Macro names and arguments will contain no more than 32 characters each. The defining string for a macro
+will contain no more than 100 characters. Macros will never be defined more than once (that is, the same
+macro name will not be used more than once as the first argument to “def”). Macro calls will always provide
+the correct number of arguments. Character case is significant in comparisons. All input characters,
+including end of line characters, are to be processed through the macro processor. No output line will
+contain more than 80 characters, including the end of line character. The input is guaranteed to be correct.
+
+Input
+There will be multiple cases to consider. The input for each case begins with a line containing a single
+integer between 1 and 10, that specifies the number of lines of text immediately following that will be used
+as input to the macro processor. None of these lines will contain more than 80 characters, so the input to
+the macro processor will contain at most 810 characters. The last case will be followed by a line containing
+the integer 0.
+
+Output
+For each input case, display the case number (1, 2, …), a line containing 79 hyphens, the output from the
+macro processor, another line containing 79 hyphens, and a blank line.
+
+
+In the sample input shown below, assume that the last visible character on each line is immediately followed
+by the end of line character. Blank lines in the expected output are shown here as **BLANK** for clarity,
+but these should actually be totally blank in your output.
+
+Example
+
+Input:
+1
+This is just copied (including end of line).
+1
+[def,321,<$3-$2-$1>][321,This,is,fun]
+1
+[def,321,<$3-$2-$1>][321,[321,A,B,C],D,E]
+1
+[def,321,<$3-$2-$1>][321,This,is,fun][321,[321,A,B,C],D,E]
+3
+[def,321,<$3-$2-$1>]
+[321,This,is,fun]
+[321,[321,A,B,C],D,E]
+3
+[def,A,<$1[B]$2>]
+[def,B,*B*]
+[A,1,2]
+2
+[def,#,<[-]$1[-]$2[-]$3[-]>][def,-,<$0>][def,DEF,def][[DEF],X,THIS IS X]
+[X][#,DEF,#,X]
+0
+
+Output:
+Case 1
+-------------------------------------------------------------------------------
+This is just copied (including end of line).
+-------------------------------------------------------------------------------
+**BLANK**
+Case 2
+-------------------------------------------------------------------------------
+fun-is-This
+-------------------------------------------------------------------------------
+**BLANK**
+Case 3
+-------------------------------------------------------------------------------
+E-D-C-B-A
+-------------------------------------------------------------------------------
+**BLANK**
+Case 4
+-------------------------------------------------------------------------------
+fun-is-ThisE-D-C-B-A
+-------------------------------------------------------------------------------
+**BLANK**
+Case 5
+-------------------------------------------------------------------------------
+**BLANK**
+fun-is-This
+E-D-C-B-A
+-------------------------------------------------------------------------------
+**BLANK**
+Case 6
+-------------------------------------------------------------------------------
+**BLANK**
+**BLANK**
+1*B*2
+-------------------------------------------------------------------------------
+**BLANK**
+Case 7
+-------------------------------------------------------------------------------
+**BLANK**
+THIS IS X-DEF-#-X-
+-------------------------------------------------------------------------------
+**BLANK**"	Camilo AndrÃ©s Varela LeÃ³n	2007-10-07	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	North Central North America Regional Programming Contest - 2003	https://www.spoj.com//problems/MKMOOM
+MKLABELS - Making Labels	"Trees comes in many varieties other than the popular binary tree. In general, a tree is a connected acyclic
+graph. That is, it consists of some number of vertices N (which we’ll assume is at least one in this problem),
+and N – 1 edges, each of which connects a pair of vertices.
+
+
+A “labeled tree” is a tree in which each vertex has been given a “label.” For simplicity, let us assume these
+labels are the integers 1 through N. In how many different ways may a tree with N vertices be labeled? By
+“different” we mean that no rearrangement of two trees with the same number of vertices with different
+labeling will be identical. (Note that although we commonly associate data with each vertex, and identify
+one vertex as the root of the tree, that’s not significant in this problem.)
+
+
+Let’s consider some examples. The figure below shows all possible arrangements of trees with N = 1, 2, 3,
+4, or 5 vertices. The number shown below each tree is the number of different ways in which the vertices
+in each tree can be labeled.
+
+
+
+
+Clearly a tree with only one vertex can be labeled in only one way – by assigning the label “1” to the single
+vertex. A tree with two vertices can also be labeled in only one way. For example, although the two trees
+shown on the left below appear to be different, the first can be easily transformed into the second.
+(Imagine the edges are strings, so the vertices can be easily repositioned without losing their connectivity.)
+
+
+
+
+There are, however, three possible ways to label the vertices in a 3-vertex tree, as shown on the right
+above. No matter how you rearrange the labeled vertices in any of the three trees, you cannot produce any
+of the other labeled trees.
+
+
+In a similar manner, the various arrangements of four vertices in a tree yield a total of 16 possible labelings
+– 12 for the four vertices “in a row,” and 4 for the other configuration. There are three possible
+arrangements of the vertices in a tree with N = 5, with a total of 125 possible
+
+Input
+There will be multiple cases to consider. The input for each case is an integer N specifying the number of
+vertices in a tree, which will always be between 1 and 10. The last case will be followed by a zero.
+
+Output
+For each input case, display the case number (1, 2, …), the input value of N, and the number of different
+ways in which a tree with N vertices may be labeled. Use the format shown in the examples below.
+
+Example
+
+Input:
+2
+3
+4
+5
+0
+
+Output:
+Case 1, N = 2, # of different labelings = 1
+Case 2, N = 3, # of different labelings = 3
+Case 3, N = 4, # of different labelings = 16
+Case 4, N = 5, # of different labelings = 125"	Camilo AndrÃ©s Varela LeÃ³n	2007-10-07	0.100s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	North Central North America Regional Programming Contest - 2003	https://www.spoj.com//problems/MKLABELS
+MKBUDGET - Making A Budget	"A company uses temporary employees (“temps”) to handle its varying workloads. By doing so, it avoids having
+to pay for benefits normally provided to its permanent employees. However, the company must pay an
+employment agency a fixed fee for each temp they hire, as well as paying the temp a fixed amount of
+severance pay when they are terminated – in addition, of course, to the monthly salary each temp receives.
+The company has a good understanding of when it needs temporary workers, and how many such workers it
+will require each month. Depending on the fee paid to the employment agency, the temporary worker’s
+salary, and the severance pay, it may make sense to retain an unneeded worker for one or more months if
+it’s known that they will be needed again in the future.
+
+
+Let’s consider an example. Suppose we know that in March the company will need 10 temps, in April they’ll
+need 9, and in May they’ll need 11. Suppose a temp earns $500 per month, that the employment agency
+receives $400 for each temp hired, and $600 is paid as severance to each temp that is terminated. If the
+company employs just the minimum number of temps required, then their payments will be as follows (we
+ignore the cost of terminating all employees at the end of the last month):
+
+
+
+
+
+The total cost to the company is $20,400. But suppose they did not terminate the unneeded temp at the
+end of March, but just let that person remain employed. They would then save $400 in employment agency
+fees (since they’d need to hire just one additional temp for May), $600 in severance pay, and only have to
+pay the temp worker $500, for an overall savings of $500.
+
+
+In this problem you are given, as input, the number of months for which the company is to plan its temp
+worker budget, the cost of hiring and firing a temp worker, the temp worker’s monthly salary, and the
+required minimum number of workers needed each month. You are to determine the minimum cost to the
+company to have at least the required minimum number of workers on hand each month. Assume there are
+no temporary workers on hand before the first month, and that the cost of terminating the workers at the
+end of the last month is not to be included in the cost. You may assume that the planning interval will be no
+longer than 24 months, and the hiring cost, severance pay, and monthly salary for each temp worker is
+greater than zero.
+
+Input
+There will be multiple cases to consider. The input for each case begins with an integer N, the number of
+months for which planning is required (never larger than 24). This is followed by three integers giving the
+cost of hiring a worker, the worker’s monthly salary, and the severance pay for a terminated worker. Finally
+there will appear N integers giving the required minimum number of workers needed in each month. The last
+case will be followed by a zero.
+
+Output
+For each input case, display the case number (1, 2, …) and the minimum cost to the company. Use the format
+shown in the examples below.
+
+Example
+
+Input:
+3 400 500 600 10 9 11
+8 400 600 600 11 9 10 14 9 9 13 15
+0
+
+Output:
+Case 1, cost = $19900
+Case 2, cost = $66600"	Camilo AndrÃ©s Varela LeÃ³n	2007-10-07	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	North Central North America Regional Programming Contest - 2003	https://www.spoj.com//problems/MKBUDGET
+ACARGO - Accumulate Cargo	"A cargo shipment containing N (1 <= N <= 105) boxes, has just arrived and it requires some regrouping. 
+All the cargo is currently placed on a long circular conveyor belt of length L metres (1 <= L <= 109), 
+which you can control and perform the following operations.
+
+Rotate the wheel clock wise or anti-clockwise (free of cost).
+Hold the cargo at some point and not let it move, while the belt is rolling. 
+This causes the cargo behind it to come closer to this cargo by one step. 
+Any consecutive sequence of cargo is grouped together and called as a luggage. The aim of the program is to group all cargo as a single luggage. Now the cost of this holding operation for one second is equal to the weight of the luggage that is held fixed. Also please note that you can hold the luggage only at ends of the luggage and never at inbetween points.
+
+Each unit of cargo weighs exactly one Kg. The conveyor belt rotates at a speed of one meters per second.
+This cost function directly reflects the human effort required to group the cargo. Workers would be happy if you can write a program that prints the minimal required effort to group the cargo, assuming an intelligent sequence of operations."	Prasanna	2007-10-08	0.100s-1.621s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	NITT ACM ICPC Local Contest 2007 [Idea from a Topcoder problem]	https://www.spoj.com//problems/ACARGO
+BWHEELER - Burrows Wheeler Precompression	"The Burrows-Wheeler transform (BWT, also called block-sorting compression), is an algorithm used in data compression techniques such as bzip2. It was invented by Michael Burrows and David Wheeler.
+When a character string is transformed by the BWT, none of its characters change value. The transformation permutes the order of the characters. If the original string had several substrings that occurred often, then the transformed string will have several places where a single character is repeated multiple times in a row. This is useful for compression, since it tends to be easy to compress a string that has runs of repeated characters by techniques such as move-to-front transform and run-length encoding.
+For example, the string:
+SIX.MIXED.PIXIES.SIFT.SIXTY.PIXIE.DUST.BOXES
+
+could be transformed into this string, which is easier to compress because it has many repeated characters:
+ TEXYDST.E.IXIXIXXSSMPPS.B..E.S.EUSFXDIIOIIIT
+
+
+Now the Burrows-Wheeler algorithm works as follows:
+
+ Given an input string S, eg: ""abcba"".
+ Find all rotations of S. 
+
+eg: ""abcba"", ""bcbaa"", ""cbaab"", ""baabc"", ""aabcb""
+
+ Now sort the strings hence produced.
+
+eg: ""aabcb"", ""abcba"", ""baabc"", ""bcbaa"", ""cbaab""
+
+ Arrange the strings in a len(S) x len(S) grid.
+
+aabcb
+abcba
+baabc
+bcbaa
+cbaab
+
+ Output the row number (1-based indexing) containing the original input string. Also output the strings formed by characters in the last column.
+eg: 2 bacab
+
+
+
+Now given the output of Burrows-Wheeler, can you recover the orginal string?
+
+
+Input Format:
+The input file consists of multiple testcases. 
+The first line of each testcase contains one integer, R, indicating the row number containing the original input string in the sorted matrix. 
+The second line of each testcase contains one string, Col, which is the last column of the grid. (1 <= len(Col) <= 1000) 
+Col contains only lowercase characters. 1 <= R <= len(Col).
+Input terminates with a line containing R=0 which must not be processed. 
+
+Output Format:
+Print the original input string to the burrow wheeler's algorithm.
+
+Testdata:
+30 testcases
+Sample Input:
+
+2
+bacab
+3
+rwlb
+11
+baaabaaaabbbaba
+0
+
+Sample Output:
+
+abcba
+rbwl
+baaabbbbaaaaaab"	Prasanna	2007-10-08	0.200s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	NITT ACM ICPC Local Contest 2007 [Wikipedia/General]	https://www.spoj.com//problems/BWHEELER
+COOLNUMS - Cool Numbers	"Cool numbers are those, whose digits can be partitioned into two sets such that the sum of the digits in either sets are equal. 
+Example: 23450 is cool because 3+4+0 = 2+5; So is 91125;
+The numbers 567, 34523 are not cool, since there is no such digit partition.
+
+Write a program that prints the number of cool numbers in the inclusive range [A,B]."	Prasanna	2007-10-08	5.673s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	NITT ACM ICPC Local Contest 2007 [Topcoder problem with Constraints raised]	https://www.spoj.com//problems/COOLNUMS
+DRAGONCU - Dragon Curves	"Define r(s) to be the complement of the reverse of the binary string s. i.e. Reverse s and then convert all 1's to 0's and all 0's to 1's. 
+Further define a sequence of binary string as follow: s0 = 1 and sn = sn-11r(sn-1). i.e.
+s0 = 1
+s1 = 110
+s2 = 1101100
+s3 = 110110011100100
+...
+
+We then program a robot to move at a steady speed of 1 unit per second and make a right-angle turn according to the characters of s10 after every unit of movement. At the kth turn, the robot turns to left if the kth character of s10 is a 1, and to right otherwise. The figure below shows the whole path of the robot.
+
+
+The robot is placed at the origin (the small circle) and face east originally. It ends up at the coordinates (-32,32) (the small spot) after 2048 seconds. The path of the robot is known as a dragon curve, a pretty well-known pattern of fractal. 
+
+If the robot is now programmed with input string s30 (with identical initial conditions as above), it will keep moving and then stop after 231 seconds. We want to know the location of the robot at any given time."	Prasanna	2007-10-08	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	NITT ACM ICPC Local Contest 2007 [Tsinghua]	https://www.spoj.com//problems/DRAGONCU
+DETER2 - Find The Determinant II	"In this problem you have to calculate the determinant of an N x N matrix whose entries are given by m[i][j] = gcd(i,j)k, 1 ≤ i,j ≤ N.
+Here gcd(i,j) denotes the greatest common divisor of i and j.
+As the determinant D can grow very large, you have to print D%1000003.
+
+Input
+First line of input consists of a single integer containing the number of test cases T ( equal to around 20), each of the following T lines contain two integers N and k where N is the size of the matrix and k is the exponent.
+1 ≤ N ≤ 1000000
+1 ≤ k ≤ 109
+Output
+One line corresponding to each test case containing the determinant modulo 1000003 for the corresponding test case.
+
+Example
+
+Input:
+3
+4 2
+2 4
+4 3
+
+
+Output:
+288
+15
+10192
+
+Note: You may want to solve DETER first, in case you havent already solved it."	Ajay Somani	2007-09-07	1s	2048B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	"""The Art of Computer Programming"""	https://www.spoj.com//problems/DETER2
+ALL - All Discs Considered	"Operating systems are large software artefacts composed of many packages, usually distributed on several media, e.g., discs.
+You probably remember the time when your favourite operating system was delivered on 21 floppy discs, or, a few years later, on 6 CDs.
+Nowadays, it will be shipped on several DVDs, each containing tens of thousands of packages.
+
+
+
+The installation of certain packages may require that other packages have been installed previously.
+Therefore, if the packages are distributed on the media in an unsuitable way, the installation of the complete system requires you to perform many media changes, provided that there is only one reading device available, e.g., one DVD-ROM drive.
+Since you have to start the installation somehow, there will of course be one or more packages that can be installed independently of all other packages.
+
+
+
+Given a distribution of packages on media and a list of dependences between packages, you have to calculate the minimal number of media changes required to install all packages.
+For your convenience, you may assume that the operating system comes on exactly 2 DVDs.
+
+Input
+
+The input contains several test cases.
+Every test case starts with three integers N1, N2, D.
+You may assume that 1<=N1,N2<=50000 and 0<=D<=100000.
+The first DVD contains N1 packages, identified by the numbers 1, 2, ..., N1.
+The second DVD contains N2 packages, identified by the numbers N1+1, N1+2, ..., N1+N2.
+Then follow D dependence specifications, each consisting of two integers xi, yi.
+You may assume that 1<=xi,yi<=N1+N2 for 1<=i<=D.
+The dependence specification means that the installation of package xi requires the previous installation of package yi.
+You may assume that there are no circular dependences.
+The last test case is followed by three zeros.
+
+
+Output
+
+For each test case output on a line the minimal number of DVD changes required to install all packages.
+By convention, the DVD drive is empty before the installation and the initial insertion of a disc counts as one change.
+Likewise, the final removal of a disc counts as one change, leaving the DVD drive empty after the installation.
+
+Example
+
+Input:
+3 2 1
+1 2
+2 2 2
+1 3
+4 2
+2 1 1
+1 3
+0 0 0
+
+Output:
+3
+4
+3"	Wanderley GuimarÄes	2007-09-14	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2004	https://www.spoj.com//problems/ALL
+BOOLE - Boolean Logic	"Propositions are logical formulas consisting of proposition symbols and connecting operators.
+They are recursively defined by the following rules:
+
+
+All proposition symbols (in this problem, lower-case alphabetic characters, e.g., a and z) are propositions.
+
+If P is a proposition, (!P) is a proposition, and P is a direct subformula of it.
+If P and Q are propositions, (P&Q), (P|Q), (P-->Q), and (P<->Q) are propositions, and P and Q are direct subformulas of them.
+
+Nothing else is a proposition.
+
+
+The operations !, &, |, -->, and <-> denote logical negation, conjunction, disjunction, implication, and equivalence, respectively.
+A proposition P is a subformula of a proposition R if P=R or P is a direct subformula of a proposition Q and Q is a subformula of R.
+
+
+
+
+Let P be a proposition and assign boolean values (i.e., 0 or 1) to all proposition symbols that occur in P.
+This induces a boolean value to all subformulas of P according to the standard semantics of the logical operators:
+
+
+
+
+
+negation
+conjunction
+disjunction
+implication
+equivalence
+
+!0=1
+0&0=0
+0|0=0
+0-->0=1
+0<->0=1
+
+!1=0
+0&1=0
+0|1=1
+0-->1=1
+0<->1=0
+
+
+1&0=0
+1|0=1
+1-->0=0
+1<->0=0
+
+
+1&1=1
+1|1=1
+1-->1=1
+1<->1=1
+
+
+
+
+This way, a value for P can be calculated.
+This value depends on the choice of the assignment of boolean values to the proposition symbols.
+If P contains n different proposition symbols, there are 2n different assignments.
+To evaluate all possible assignments we may use truth tables.
+
+
+
+
+A truth table contains one line per assignment (i.e., 2n lines in total).
+Every line contains the values of all subformulas under the chosen assignment.
+The value of a subformula is aligned with the proposition symbol, if the subformula is a proposition symbol, and with the center of the operator otherwise.
+
+Input Specification
+
+
+The input contains several test cases, each on a separate line.
+Every test case denotes a proposition and may contain arbitrary amounts of spaces in between.
+The input file terminates immediately after the newline symbol following the last test case.
+
+Output Specification
+
+
+For each test case generate a truth table for the denoted proposition.
+Start the truth table by repeating the input line.
+Evaluate the proposition (and its subformulas) for all assignments to its variables, and output one line for each assignment.
+The line must have the same length as the corresponding input line and must consist only of spaces and the characters 0 and 1.
+Output an empty line after each test case.
+
+
+
+
+Let s1,...,sn be the proposition symbols in the denoted proposition sorted in alphabetic order.
+Then, all assignments of 0 to s1 must precede the assignments of 1 to s1.
+Within each of these blocks of assignments, all assignments of 0 to s2 must precede the assignments of 1 to s2, and so on.
+
+
+Sample Input
+
+
+((b --> a) <-> ((! a) --> (! b)))
+  ((y &  a)   -  ->(c |c))
+
+Sample Output
+
+
+((b --> a) <-> ((! a) --> (! b)))
+  0  1  0   1    1 0   1   1 0   
+  1  0  0   1    1 0   0   0 1   
+  0  1  1   1    0 1   1   1 0   
+  1  1  1   1    0 1   1   0 1   
+
+  ((y &  a)   -  ->(c |c))
+    0 0  0       1  0 00  
+    1 0  0       1  0 00  
+    0 0  0       1  1 11  
+    1 0  0       1  1 11  
+    0 0  1       1  0 00  
+    1 1  1       0  0 00  
+    0 0  1       1  1 11  
+    1 1  1       1  1 11"	Wanderley GuimarÄes	2007-09-14	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2004	https://www.spoj.com//problems/BOOLE
+DNALAB - DNA Laboratory	"Having started to build his own DNA lab just recently, the evil doctor Frankenstein is not quite
+  up to date yet. He wants to extract his DNA, enhance it somewhat and clone himself. He has
+  already figured out how to extract DNA from some of his blood cells, but unfortunately reading
+  off the DNA sequence means breaking the DNA into a number of short pieces and analyzing those
+  first. Frankenstein has not quite understood how to put the pieces together to recover the original sequence."	AndrÃ©s Leonardo Rojas Duarte	2007-09-15	2.052s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	TUD Programming Contest 2004	https://www.spoj.com//problems/DNALAB
+ICAMPSEQ - IOICamp Sequence	"Let's say we have 4 N-elements sequences of real numbers: A[], B[], C[], D[] .
+Funtion F(i, j) is defined: F(i, j) = |Ai - Aj| + |Bi - Bj| + |Ci - Cj| + |Di - Dj| (1 â¤ i, j â¤ N).
+Your task is very easy: you have to find the maximum of F(i, j).
+
+Input
+The first line: N (N â¤ 100000).
+Following are N lines: the i-th line contains four real numbers Ai, Bi, Ci, Di. (-109 â¤ Ai, Bi, Ci, Di â¤ 109)
+
+Output
+Only one line is the maximum of F(i, j).
+(The result takes exactly 3 decimal places)
+Example
+
+Input:
+2
+1.0 1.0 2.0 0.5
+1.0 1.0 0.5 2.0
+
+Output:
+3.000"	Nghia Nguyen Hoang	2007-09-18	0.100s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO NODEJS PERL6 VB.NET	IOICamp and Ms. Thanh Vy Hua Le	https://www.spoj.com//problems/ICAMPSEQ
+CODE - Code	KEY Inc., the leading company in security hardware, has developed a new kind of safe. To unlock it, you don't need a key but you are required to enter the correct n-digit code on a keypad (as if this were something new!). There are several models available, from toy safes for children (with a 2-digit code) to the military version (with a 6-digit code).	Wanderley GuimarÄes	2007-09-19	0.200s	50000B	1536MB	Cube (Intel G860)	All	University of Ulm Local Contest 2004	https://www.spoj.com//problems/CODE
+DANGER - In Danger	"Flavius Josephus and 40 fellow rebels were trapped by the Romans.
+His companions preferred suicide to surrender, so they decided to form a circle and to kill every third person and to proceed around the circle until no one was left.
+Josephus was not excited by the idea of killing himself, so he calculated the position to be the last man standing (and then he did not commit suicide since nobody could watch)."	Wanderley GuimarÄes	2007-09-19	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2004	https://www.spoj.com//problems/DANGER
+ENCONDIN - Run Length Encoding	Your task is to write a program that performs a simple form of run-length encoding, as described by the rules below.	Wanderley GuimarÄes	2007-09-19	0.303s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2004	https://www.spoj.com//problems/ENCONDIN
+FRACTAN - Fractan	Formally, we define a sequence by S0=N, and Sj+1=fiSj, if for 1<=i<=k, the number fiSj is an integer but the numbers f1Sj, ..., fi-1Sj are not.	Wanderley GuimarÄes	2007-09-19	0.303s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2004	https://www.spoj.com//problems/FRACTAN
+GREEDULM - HuffmanÂ´s Greed	"In the following we define the basic terminology of trees.
+A tree is defined inductively: It has a root which is either an external node (a leaf), or an internal node having a sequence of trees as its children.
+An internal node is also called the parent of the roots of its child trees.
+The level of a node in a tree is defined inductively: The root has level 0, and the level of a node is 1 more than the level of its parent node."	Wanderley GuimarÄes	2007-09-19	1s	50000B	1536MB	Cube (Intel G860)	All except: ERL JS-RHINO	University of Ulm Local Contest 2004	https://www.spoj.com//problems/GREEDULM
